@@ -20,7 +20,7 @@ buttons.forEach(button => {
         const expression = display.value
           .replace(/×/g, '*') // 替换乘号
           .replace(/÷/g, '/') // 替换除号
-          .replace(/\%/g, '/100')
+          .replace(/\%/g, '/100') // 处理百分号
           .replace(/\[/g, '(')
           .replace(/\]/g, ')');
         display.value = eval(expression); // 计算结果
@@ -48,7 +48,7 @@ window.addEventListener('keydown', (event) => {
       const expression = display.value
         .replace(/×/g, '*') // 替换乘号
         .replace(/÷/g, '/') // 替换除号
-        .replace(/\%/g, '/100')
+        .replace(/\%/g, '/100') // 处理百分号
         .replace(/\[/g, '(')
         .replace(/\]/g, ')');
       display.value = eval(expression); // 计算结果
