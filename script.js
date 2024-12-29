@@ -1,15 +1,25 @@
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('.buttons button');
 
+// 使点击输入框时弹出系统键盘
+display.addEventListener('click', () => {
+  display.removeAttribute('readonly'); // 使输入框可编辑
+  display.focus(); // 聚焦输入框，触发系统键盘
+});
+
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const value = button.textContent;
 
     if (value === 'C') {
       display.value = ''; // 清空输入框
+    } else if (value === 'CE') {
+      display.value = ''; // 清空当前输入框的值（与C相同，可进一步扩展）
     } else if (value === '=') {
       try {
         const expression = display.value
+          .replace(/×/g, '*') // 替换乘号
+          .replace(/÷/g, '/') // 替换除号
           .replace(/\%/g, '/100')
           .replace(/\[/g, '(')
           .replace(/\]/g, ')');
@@ -31,11 +41,13 @@ window.addEventListener('keydown', (event) => {
 
   if (key === 'Backspace') {
     display.value = display.value.slice(0, -1); // 退格键删除
-  } else if ('0123456789/*-+.%()'.includes(key)) {
+  } else if ('0123456789/*-+.%()[]'.includes(key)) {
     display.value += key; // 输入数字和运算符
   } else if (key === 'Enter') {
     try {
       const expression = display.value
+        .replace(/×/g, '*') // 替换乘号
+        .replace(/÷/g, '/') // 替换除号
         .replace(/\%/g, '/100')
         .replace(/\[/g, '(')
         .replace(/\]/g, ')');

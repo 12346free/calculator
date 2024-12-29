@@ -25,11 +25,13 @@ body {
   padding: 5px;
   border: 2px solid #ddd;
   border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer; /* 确保可以点击触发键盘 */
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 每排4列 */
   gap: 10px;
 }
 
