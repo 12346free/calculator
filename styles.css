@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: #32d5c6; /* 绿青色背景 */
 }
 
 .calculator {
@@ -37,16 +37,16 @@ button {
   padding: 15px;
   font-size: 1rem;
   border: none;
-  background: #e0e0e0;
+  background: #add8e6; /* 淡蓝色按钮 */
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 button:hover {
-  background: #d0d0d0;
+  background: #90ccea;
 }
 
 button:active {
-  background: #c0c0c0;
+  background: #6bb7de;
 }
